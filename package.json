@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "json-server": "npx json-server db.json --port 8000",
+    "frontend-dev":"next dev",
+    "dev": "concurrently \"npm run frontend-dev\" \"npm run json-server\"",
     "build": "next build",
-    "start": "next start",
+    "frontend-start": "next start",
+    "start": "concurrently \"npm run frontend-start\" \"npm run json-server\"",
     "lint": "next lint"
   },
   "dependencies": {
+    "concurrently": "^8.2.2",
+    "gsap": "^3.12.5",
+    "json-server": "^1.0.0-alpha.23",
+    "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
