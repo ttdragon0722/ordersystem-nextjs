@@ -42,7 +42,9 @@ const Home = () => {
             return { name, price, amount };
         });
 
-        let copy = ""
+        let copy = "";
+setOutputPrice(0);
+
         for (const list of output) {
             if (list.amount > 0) {
                 if (copy === "") {
